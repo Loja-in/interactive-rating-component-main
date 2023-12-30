@@ -1,15 +1,11 @@
 function saveRating(rating) {
     localStorage.setItem('rating', rating);
 }
-
 document.getElementById('submit').addEventListener('click', function() {
-        window.location.href = 'thank.html';
+    window.location.href = 'thank.html';
+    let rate = localStorage.getItem('rating');
+    if(rate !== null){
+        let span = document.querySelector("#rate");
+        span.innerHTML = `${rate}`;
+    }
 });
-function displayRating() {
-let rating = localStorage.getItem('rating');
-
-if (rating !== null){
-let span = document.querySelector('#rating');
-span.innerHTML = `${rating}`;
-console.log(span);
-        }}
